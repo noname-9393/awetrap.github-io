@@ -3,21 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <title>Login Form</title>
-  <link rel="stylesheet" href="430.css"> <!-- Link to your custom styles -->
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      width: 300px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+      background-color: #004d00;
+      color: #00cc00;
+      text-align: center;
+    }
+
+    .input-group {
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: calc(100% - 12px);
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+      background-color: #004d00;
+      color: #00cc00;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+
+    input[type="text"]::placeholder,
+    input[type="password"]::placeholder {
+      color: #00cc00;
+      opacity: 0.7;
+      font-style: italic;
+    }
+
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      outline: none;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #003300;
+      color: #00cc00;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #002200;
+    }
+
+    .stars {
+      position: absolute;
+      top: 50%;
+      right: 5px;
+      transform: translateY(-50%);
+      color: #00cc00;
+      font-size: 20px;
+    }
+  </style>
 </head>
 <body>
   <div class="login-container">
     <form action="login_process.php" method="post">
       <h2>Login</h2>
       <div class="input-group">
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required>
+        <input type="text" name="username" placeholder="Username">
+        <span class="stars">*</span>
       </div>
       <div class="input-group">
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" name="password" placeholder="Password">
+        <span class="stars">*</span>
       </div>
-      <button type="submit">Login</button>
+      <input type="submit" value="Login">
     </form>
   </div>
 </body>
